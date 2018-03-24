@@ -1,5 +1,5 @@
 # Dependencies
-import pandas as pd
+#import pandas as pd
 import tweepy
 import time
 import json
@@ -17,6 +17,7 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth, parser=tweepy.parsers.JSONParser())
 
+counter = 1
 # Quotes to Tweet
 happy_quotes = ["For every minute you are angry you lose sixty seconds of happiness. - Ralph Waldo Emerson",
                 "Folks are usually about as happy as they make their minds up to be. - Abraham Lincoln",
@@ -31,10 +32,11 @@ happy_quotes = ["For every minute you are angry you lose sixty seconds of happin
 def HappyItUp():
 
     # Tweet a random quote
-    api.update_status(random.choice(happy_quotes))
+    api.update_status(random.choice(happy_quotes) + str(counter))
 
     # Print success message
     print("Tweeted successfully, sir!")
+    count + 1
 
 
 # Set timer to run every minute
