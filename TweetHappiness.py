@@ -29,17 +29,18 @@ happy_quotes = ["For every minute you are angry you lose sixty seconds of happin
 
 
 # Create function for tweeting
-def HappyItUp():
+def HappyItUp(counter):
 
     # Tweet a random quote
     api.update_status(random.choice(happy_quotes) + str(counter))
 
     # Print success message
     print("Tweeted successfully, sir!")
-    count + 1
+
 
 
 # Set timer to run every minute
 while(True):
-    HappyItUp()
+    HappyItUp(counter)
+    counter += 1
     time.sleep(60)
